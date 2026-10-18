@@ -14,6 +14,10 @@ func CheckDebug() {
 	}
 }
 
+func GetDebugPtr() *bool {
+	return &isDebug
+}
+
 func PrintDebug(v ...any) {
 	if isDebug {
 		fmt.Fprintln(os.Stderr, "[DEBUG]", strings.Trim(fmt.Sprint(v...), "[]"))
