@@ -20,10 +20,12 @@ func GetDebugPtr() *bool {
 
 func PrintDebug(v ...any) {
 	if isDebug {
-		fmt.Fprintln(os.Stderr, "[DEBUG]", strings.Trim(fmt.Sprint(v...), "[]"))
+		fmt.Fprintln(os.Stderr, "[DEBUG] ")
+		fmt.Fprintln(os.Stderr, v...)
 	}
 }
 func PrintError(v ...any) {
-	fmt.Fprintln(os.Stderr, "[ERROR]", strings.Trim(fmt.Sprint(v...), "[]"))
+	fmt.Fprint(os.Stderr, "[ERROR] ")
+	fmt.Fprintln(os.Stderr, v...)
 	os.Exit(1)
 }
